@@ -1,1 +1,0 @@
-# lindagaw.github.io
