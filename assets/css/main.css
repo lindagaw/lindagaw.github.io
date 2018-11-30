@@ -2207,6 +2207,7 @@
 	input[type="button"],
 	button,
 	.button {
+
 		-moz-appearance: none;
 		-webkit-appearance: none;
 		-ms-appearance: none;
@@ -2391,6 +2392,8 @@
 	}
 
 		.thumbnails a {
+			
+			
 			-moz-transition: all 0.2s ease;
 			-webkit-transition: all 0.2s ease;
 			-ms-transition: all 0.2s ease;
@@ -2406,13 +2409,17 @@
 			cursor: pointer;
 			outline: 0;
 			overflow: hidden;
+			
+
 		}
 
 			.thumbnails a img {
+				
 				display: block;
 				width: 100%;
 				border-top-left-radius: 4px;
 				border-top-right-radius: 4px;
+
 			}
 
 			.thumbnails a h3 {
