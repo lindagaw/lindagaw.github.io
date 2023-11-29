@@ -2,8 +2,8 @@ import torch.nn as nn
 import numpy as np
 
 # Import necessary modules and libraries
-from transformers import ViTFeatureExtractor, ViTModel, default_data_collator, EarlyStoppingCallback
-from transformers import ViTForImageClassification, TrainingArguments, Trainer
+from transformers import ViTFeatureExtractor, ViTModel, default_data_collator
+from transformers import TrainingArguments, Trainer
 from transformers.modeling_outputs import SequenceClassifierOutput
 from datasets import load_dataset, Image, load_metric, Features, ClassLabel, Array3D
 
