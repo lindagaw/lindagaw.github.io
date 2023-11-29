@@ -143,19 +143,19 @@ def train():
     return avg_loss, total_preds
 
 def eval():
-total_loss = 0
-model.eval() # prep model for evaluation
-for step,batch in enumerate(val_dataloader):
-    lbl, pix = batch.items()
-    lbl, pix = lbl[1].to(device), pix[1].to(device)
+    total_loss = 0
+    model.eval() # prep model for evaluation
+    for step,batch in enumerate(val_dataloader):
+        lbl, pix = batch.items()
+        lbl, pix = lbl[1].to(device), pix[1].to(device)
 
-    # forward pass: compute predicted outputs by passing inputs to the model
-    preds = model(pix)
-    # calculate the loss
-    loss = cross_entropy(preds, lbl)
-    total_loss += loss.item()
+        # forward pass: compute predicted outputs by passing inputs to the model
+        preds = model(pix)
+        # calculate the loss
+        loss = cross_entropy(preds, lbl)
+        total_loss += loss.item()
 
-return total_loss / len(val_dataloader)
+    return total_loss / len(val_dataloader)
 
 min_loss = inf
 es = 0
