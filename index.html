@@ -1,95 +1,253 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>Ashley (Ye) Gao</title>
-   <meta name="author" content="" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ashley Gao — Assistant Professor, William & Mary</title>
+  <meta name="description" content="Personal academic website of Ashley (Ye) Gao, Assistant Professor of Computer Science at William & Mary. Research: domain generalization, transfer learning, cyber-physical systems, smart healthcare." />
+  <style>
+    /* --------- Base & Theme --------- */
+    :root { --bg: #0b0c10; --card: #111218; --muted: #9aa3b2; --text: #e8ecf1; --brand: #2dd4bf; --brand-2: #60a5fa; --border: #1f2230; }
+    :root.light { --bg: #f7f7fb; --card: #ffffff; --muted: #505a6b; --text: #1c1f28; --brand: #0ea5e9; --brand-2: #22c55e; --border: #e5e7ef; }
 
-   <!--- Blueprint CSS Framework -->
-   <link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection" />
-   <link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print" />
-   <!--[if IE]>
-      <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
-   <![endif]-->
+    html, body { height: 100%; }
+    body {
+      margin: 0; font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text); background: radial-gradient(1200px 600px at 80% -10%, rgba(96,165,250,0.12), transparent 60%), radial-gradient(900px 500px at -10% 10%, rgba(45,212,191,0.12), transparent 60%), var(--bg);
+    }
 
-   <!-- CodeRay syntax highlighting CSS -->
-   <link rel="stylesheet" href="css/coderay.css" type="text/css" />
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-   <!-- Homepage CSS -->
-   <link rel="stylesheet" href="css/site.css" type="text/css" media="screen, projection" />
+    .container { max-width: 1000px; margin: 0 auto; padding: 24px; }
+
+    /* --------- Header --------- */
+    header { position: sticky; top: 0; backdrop-filter: saturate(180%) blur(8px); background: color-mix(in srgb, var(--bg) 85%, transparent); border-bottom: 1px solid var(--border); z-index: 50; }
+    .brand { display: flex; gap: 12px; align-items: center; }
+    .logo-img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
+    .title { font-weight: 700; font-size: 1.1rem; letter-spacing: .2px; }
+    .subtitle { font-size: .9rem; color: var(--muted); }
+
+    .nav { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .tab { appearance: none; border: 1px solid var(--border); background: linear-gradient(180deg, color-mix(in srgb, var(--card) 80%, transparent), var(--card)); color: var(--text); border-radius: 999px; padding: 8px 14px; cursor: pointer; font-weight: 600; font-size: .95rem; transition: transform .05s ease, background .2s ease, border-color .2s ease; }
+    .tab:hover { transform: translateY(-1px); border-color: color-mix(in srgb, var(--brand) 40%, var(--border)); }
+    .tab[aria-selected="true"] { background: linear-gradient(180deg, color-mix(in srgb, var(--brand) 18%, var(--card)), var(--card)); border-color: color-mix(in srgb, var(--brand) 60%, var(--border)); }
+
+    .toolbar { display: flex; align-items: center; gap: 12px; }
+    .spacer { flex: 1; }
+    .toggle { border-radius: 10px; border: 1px solid var(--border); padding: 6px 10px; background: var(--card); color: var(--text); cursor: pointer; font-weight: 600; }
+
+    /* --------- Main --------- */
+    main { padding-top: 18px; }
+    section[role="tabpanel"] { display: none; border: 1px solid var(--border); background: linear-gradient(180deg, color-mix(in srgb, var(--card) 85%, transparent), var(--card)); border-radius: 18px; padding: 24px; margin: 18px 0 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+    section[role="tabpanel"].active { display: block; }
+
+    h1 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); margin: 0 0 .25rem; }
+    h2 { font-size: 1.25rem; margin: 1.25rem 0 .5rem; }
+    h3 { font-size: 1.05rem; margin: 1rem 0 .25rem; color: var(--muted); }
+    p { margin: .35rem 0; }
+    ul { margin: .4rem 0 .8rem 1.1rem; }
+
+    .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 760px) { .grid { grid-template-columns: 2fr 1fr; } }
+
+    .card { border: 1px solid var(--border); background: var(--card); border-radius: 16px; padding: 16px; }
+    .muted { color: var(--muted); }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; background: color-mix(in srgb, var(--card) 70%, var(--border)); border: 1px solid var(--border); border-radius: 6px; padding: 2px 6px; font-size: .85em; }
+
+    footer { padding: 24px; color: var(--muted); text-align: center; border-top: 1px solid var(--border); }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="container" style="display:flex; gap:18px; align-items:center;">
+      <a href="#home" class="brand" data-tab-link>
+        <!-- Swap profile.jpg with your own image file -->
+        <img class="logo-img" src="assets/ashley_2.JPG" alt="Portrait of Ashley Gao" />
+        <div>
+          <div class="title">Ashley (Ye) Gao</div>
+          <div class="subtitle">Assistant Professor · Computer Science · William & Mary</div>
+        </div>
+      </a>
+      <div class="spacer"></div>
+      <div class="toolbar">
+        <button id="themeToggle" class="toggle" aria-label="Toggle theme" title="Toggle light/dark">Toggle theme</button>
+      </div>
+    </div>
+    <div class="container nav" role="tablist" aria-label="Primary">
+      <button class="tab" role="tab" aria-selected="true" data-tab="home">Home</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="lab">Lab</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="publications">Publications</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="teaching">Teaching</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="awards">Awards</button>
+    </div>
+  </header>
 
-<div class="container">
+  <main class="container">
+    <!-- Home -->
+    <section id="home" role="tabpanel" class="active" aria-labelledby="home-tab">
+      <div class="grid">
+        <div class="card">
+          <h1>Welcome</h1>
+          <p>My name is <strong>Ashley Gao</strong>, and I am an <strong>Assistant Professor</strong> at <strong>William &amp; Mary</strong>. I obtained my PhD in Computer Science from the <strong>University of Virginia (UVa)</strong>, advised by Professor <strong>John Stankovic</strong>. My research interest lies in the intersection of <em>domain generalization</em>, <em>transfer learning</em>, and their applications to <em>cyber-physical systems</em>, especially in <em>smart healthcare</em>.</p>
+          <p>Before joining Professor Stankovic's group, I obtained my <strong>M.S.</strong> in Computer Science at the University of Virginia, and my <strong>B.S.</strong> in Computer Science and <strong>B.A.</strong> in Literatures of the World at the University of California, San Diego (UCSD).</p>
+        </div>
+        <aside class="card">
+          <h2>Information</h2>
+          <p>Department of Computer Science<br/>William &amp; Mary</p>
+          <p>Office: McGlothlin-Street Hall 004<br/>251 Jamestown Rd<br/>Williamsburg, VA 23185, United States</p>
+          <p>e-mail: <span class="kbd">ygao18_at_wm_edu</span></p>
+          <p>CV: <a href="cv.pdf" target="_blank" rel="noopener">here</a></p>
+        </aside>
+      </div>
 
+      <div class="card">
+        <h2>Research Assistant Recruitment</h2>
+        <p class="muted">I am actively looking for graduate and undergraduate students from the following disciplinary backgrounds: computer science, data science, artificial intelligence, information science, health sciences.</p>
+        <p>If you are interested in working with me, please email me following the instructions below. In your email, include:</p>
+        <ul>
+          <li>Your resume/CV.</li>
+          <li>Your transcript(s) and class ranking.</li>
+          <li>Your current degree program, and a brief overview of any relevant coursework or research experience.</li>
+          <li>A concise and pithy summary of why you are interested in working with me; please refer to my publications for relevant prior work. Note: if you are a Master's or undergraduate student, I may direct you to complete an independent study before considering a funded position.</li>
+        </ul>
+      </div>
+    </section>
 
+    <!-- Lab -->
+    <section id="lab" role="tabpanel" aria-labelledby="lab-tab">
+      <h1>Lab</h1>
+      <p class="muted">Add your lab name, mission, and current projects. Sample sections below.</p>
+      <div class="grid">
+        <div class="card">
+          <h2>Mission</h2>
+          <p>We advance trustworthy, context-aware machine learning for cyber-physical systems with a focus on real-world health applications.</p>
+        </div>
+        <div class="card">
+          <h2>Open Positions</h2>
+          <p>Prospective students and collaborators are encouraged to read the <a href="#home" data-tab-link>Research Assistant Recruitment</a> notes and email as directed.</p>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Projects (Examples)</h2>
+        <ul>
+          <li><strong>Domain-Generalized Audio Sensing</strong> — robust SER under distribution shift.</li>
+          <li><strong>Transfer Learning for CPS</strong> — adapting models across homes and devices.</li>
+          <li><strong>Smart Healthcare at the Edge</strong> — lightweight models for mobile sensing.</li>
+        </ul>
+      </div>
+    </section>
 
+    <!-- Publications -->
+    <section id="publications" role="tabpanel" aria-labelledby="publications-tab">
+      <h1>Publications</h1>
+      <p class="muted">List publications in reverse chronological order. Include links to PDFs, code, and datasets when available.</p>
+      <div class="card">
+        <h2>Selected</h2>
+        <ul>
+          <li>[YYYY] Title — <em>Venue</em>. <a href="#" aria-label="PDF link">PDF</a> · <a href="#" aria-label="Code link">Code</a></li>
+          <li>[YYYY] Title — <em>Venue</em>. <a href="#">PDF</a> · <a href="#">Code</a></li>
+        </ul>
+      </div>
+    </section>
 
-   <div class="column span-15 prepend-2 append-2 first last" id="header">
-     <p class="title">Ashley (Ye) Gao</p>
+    <!-- Teaching -->
+    <section id="teaching" role="tabpanel" aria-labelledby="teaching-tab">
+      <h1>Teaching</h1>
+      <div class="card">
+        <h2>Courses</h2>
+        <ul>
+          <li>CS XXX — Course Name (Semester, Year)</li>
+          <li>CS XXX — Course Name (Semester, Year)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Mentoring</h2>
+        <p>Include information on student supervision, independent studies, and research groups.</p>
+      </div>
+    </section>
 
-     <div id="navigation">
-		<ul>
+    <!-- Awards -->
+    <section id="awards" role="tabpanel" aria-labelledby="awards-tab">
+      <h1>Awards & Honors</h1>
+      <div class="card">
+        <ul>
+          <li>[Year] Award Name — Organization</li>
+          <li>[Year] Award Name — Organization</li>
+        </ul>
+      </div>
+    </section>
+  </main>
 
+  <footer>
+    © <span id="year"></span> Ashley (Ye) Gao · William &amp; Mary · Built with HTML/CSS/JS
+  </footer>
 
-			   <li class="current"> Home </li>
+  <script>
+    // ------- Theme toggle (persisted) -------
+    (function(){
+      const lsKey = 'themePrefV1';
+      const saved = localStorage.getItem(lsKey);
+      const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+      if (saved === 'light' || (!saved && prefersLight)) document.documentElement.classList.add('light');
+      const btn = document.getElementById('themeToggle');
+      btn.addEventListener('click', () => {
+        const light = document.documentElement.classList.toggle('light');
+        localStorage.setItem(lsKey, light ? 'light' : 'dark');
+      });
+    })();
 
+    // ------- Tabs & hash routing -------
+    const tabs = Array.from(document.querySelectorAll('.tab'));
+    const panels = new Map(Array.from(document.querySelectorAll('section[role="tabpanel"]')).map(p => [p.id, p]));
 
-				<li><a href="./group.html">Group</a></li>
+    function activate(id) {
+      if (!panels.has(id)) id = 'home';
+      for (const t of tabs) t.setAttribute('aria-selected', String(t.dataset.tab === id));
+      for (const [pid, el] of panels) el.classList.toggle('active', pid === id);
+      const activeBtn = tabs.find(t => t.dataset.tab === id);
+      if (activeBtn) activeBtn.focus({preventScroll:true});
+    }
 
+    tabs.forEach(t => t.addEventListener('click', () => {
+      const id = t.dataset.tab; history.replaceState(null, '', `#${id}`); activate(id);
+    }));
 
-				<li><a href="./publications.html">Publications</a></li>
+    document.querySelectorAll('[data-tab-link]').forEach(a => a.addEventListener('click', (e) => {
+      e.preventDefault(); const href = (a.getAttribute('href')||'').replace('#','');
+      if (href) { history.replaceState(null, '', `#${href}`); activate(href); }
+    }));
 
+    window.addEventListener('hashchange', () => activate(location.hash.replace('#','')));
+    activate(location.hash.replace('#',''));
 
-				<li><a href="./teaching.html">Teaching</a></li>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 
-        <li><a href="./awards.html">Awards</a></li>
-
-		</ul>
-	</div>
-
-     <hr />
-   </div>
-
-
-
-   <div class="column span-15 prepend-2 first">
-      <p><img src="assets/ashley_2.JPG" style="width:15em;height:19.7em;float:right;margin:0 0 0 2em" /></p>
-
-      <p>My name is Ashley Gao, and I am an Assistant Professor at William & Mary. I obtained my PhD in Computer Science from the University of Virginia (UVa), advised by Professor <a href="https://engineering.virginia.edu/faculty/john-stankovic">John Stankovic </a>. My research interest lies in the intersection of <b>domain generalization</b>, <b>transfer learning</b>, and how to use such techniques in <b>applications in the cyber physical systems</b>, especially in the settings of <b>smart healthcare</b>. Before joining Professor Stankovic's group, I obtained my M.S. in Computer Science at the University of Virginia, my B.S. in Computer Science and B.A. in Literatures of the World at the University of California, San Diego (UCSD).</p>
-
-
-<h2>Research Assistant Recruitment</h2>
-<p>I am actively looking for graduate and undergraduate students from the following disciplinary backgrounds: computer science, data science, artificial intelligence, information science, health sciences.</p>
-<p>If you are interested in working with me, please feel free to email me following the instructions below. In your email, please include:</p>
-
-<ul>
-   <li>Your resume/CV.</li>
-   <li>Your transcript(s) and class ranking.</li>
-   <li>Your current degree program, and a brief overview of any relevant coursework or research experience you have. </li>
-   <li>A concise and pithy summarization on why you are interested in working with me; please refer to my publications for the works that I have been doing. Note that if you are a Master's or undergraduate student, I may direct you to partake in an independent study project before considering providing you a funded position.</li>
-</ul>
-
-<h2>Information</h2>
-<p>Department of Computer Science<br />
-William & Mary<br />
-Office: McGlothlin-Street Hall 004<br />
-251 Jamestown Rd<br />
-Williamsburg, VA 23185, United States<br />
-e-mail: ygao18_at_wm_edu</p>
-
-cv: <a href="./assets/CV_Ashley_Gao.pdf">here</a>
-
-
-</div>
-
-
-   <div class="column span-15 prepend-2 append-2 first last" id="footer">
-     <hr />
-   </div>
-
-</div>
+  <!-- Structured data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ashley (Ye) Gao",
+    "jobTitle": "Assistant Professor of Computer Science",
+    "affiliation": {"@type": "CollegeOrUniversity", "name": "William & Mary"},
+    "alumniOf": [
+      {"@type": "CollegeOrUniversity", "name": "University of Virginia"},
+      {"@type": "CollegeOrUniversity", "name": "University of California, San Diego"}
+    ],
+    "email": "ygao18@wm.edu",
+    "url": "",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "251 Jamestown Rd, McGlothlin-Street Hall 004",
+      "addressLocality": "Williamsburg",
+      "addressRegion": "VA",
+      "postalCode": "23185",
+      "addressCountry": "US"
+    }
+  }
+  </script>
 </body>
 </html>
