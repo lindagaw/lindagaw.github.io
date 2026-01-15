@@ -13,7 +13,7 @@
   --max: 1100px;
 }
 
-@media (prefers-color-scheme: light){
+@media (color-scheme: light){
   :root{
     --bg: #fbfbfc;
     --panel: rgba(0,0,0,.04);
