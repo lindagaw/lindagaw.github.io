@@ -13,12 +13,12 @@
   --max: 1100px;
 }
 
-@media (prefers-color-scheme: light){
+@media (color-scheme: light){
   :root{
     --bg: #fbfbfc;
     --panel: rgba(0,0,0,.04);
     --panel-2: rgba(0,0,0,.06);
-    --text: rgba(0,0,0,.92);
+    --text: rgba(255,255,255,.92);
     --muted: rgba(0,0,0,.62);
     --hairline: rgba(0,0,0,.10);
     --shadow: 0 14px 40px rgba(0,0,0,.10);
