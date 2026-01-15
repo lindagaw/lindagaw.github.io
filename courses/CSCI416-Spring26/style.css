@@ -35,10 +35,7 @@ body{
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
   line-height: 1.6;
   letter-spacing: .2px;
-  background:
-    radial-gradient(1000px 700px at 10% -10%, color-mix(in oklab, var(--accent) 22%, transparent), transparent 60%),
-    radial-gradient(900px 650px at 90% 0%, color-mix(in oklab, var(--accent-2) 18%, transparent), transparent 55%),
-    var(--bg);
+  background: #000000;
 }
 
 a{
