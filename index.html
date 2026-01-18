@@ -5,15 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ashley Gao — Assistant Professor, William & Mary</title>
   <meta name="description" content="Personal academic website of Ashley (Ye) Gao, Assistant Professor of Computer Science at William & Mary. Research: domain generalization, transfer learning, cyber-physical systems, smart healthcare." />
+  <style>
+    /* --------- Base & Theme --------- */
+    :root { --bg: #0b0c10; --card: #111218; --muted: #9aa3b2; --text: #e8ecf1; --brand: #2dd4bf; --brand-2: #60a5fa; --border: #1f2230; }
+    :root.light { --bg: #f7f7fb; --card: #ffffff; --muted: #505a6b; --text: #1c1f28; --brand: #0ea5e9; --brand-2: #22c55e; --border: #e5e7ef; }
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="styles.css" />
+    html, body { height: 100%; }
+    body {
+      margin: 0; font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text); background: radial-gradient(1200px 600px at 80% -10%, rgba(96,165,250,0.12), transparent 60%), radial-gradient(900px 500px at -10% 10%, rgba(45,212,191,0.12), transparent 60%), var(--bg);
+    }
+
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 24px; }
+
+    /* --------- Header --------- */
+    header { position: sticky; top: 0; backdrop-filter: saturate(180%) blur(8px); background: color-mix(in srgb, var(--bg) 85%, transparent); border-bottom: 1px solid var(--border); z-index: 50; }
+    .brand { display: flex; gap: 12px; align-items: center; }
+    .logo-img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
+    .title { font-weight: 700; font-size: 1.1rem; letter-spacing: .2px; }
+    .subtitle { font-size: .9rem; color: var(--muted); }
+
+    .nav { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .tab { appearance: none; border: 1px solid var(--border); background: linear-gradient(180deg, color-mix(in srgb, var(--card) 80%, transparent), var(--card)); color: var(--text); border-radius: 999px; padding: 8px 14px; cursor: pointer; font-weight: 600; font-size: .95rem; transition: transform .05s ease, background .2s ease, border-color .2s ease; }
+    .tab:hover { transform: translateY(-1px); border-color: color-mix(in srgb, var(--brand) 40%, var(--border)); }
+    .tab[aria-selected="true"] { background: linear-gradient(180deg, color-mix(in srgb, var(--brand) 18%, var(--card)), var(--card)); border-color: color-mix(in srgb, var(--brand) 60%, var(--border)); }
+
+    .toolbar { display: flex; align-items: center; gap: 12px; }
+    .spacer { flex: 1; }
+    .toggle { border-radius: 10px; border: 1px solid var(--border); padding: 6px 10px; background: var(--card); color: var(--text); cursor: pointer; font-weight: 600; }
+
+    /* --------- Main --------- */
+    main { padding-top: 18px; }
+    section[role="tabpanel"] { display: none; border: 1px solid var(--border); background: linear-gradient(180deg, color-mix(in srgb, var(--card) 85%, transparent), var(--card)); border-radius: 18px; padding: 24px; margin: 18px 0 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+    section[role="tabpanel"].active { display: block; }
+
+    h1 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); margin: 0 0 .25rem; }
+    h2 { font-size: 1.25rem; margin: 1.25rem 0 .5rem; }
+    h3 { font-size: 1.05rem; margin: 1rem 0 .25rem; color: var(--muted); }
+    p { margin: .35rem 0; }
+    ul { margin: .4rem 0 .8rem 1.1rem; }
+
+    .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 760px) { .grid { grid-template-columns: 2fr 1fr; } }
+
+    .card { border: 1px solid var(--border); background: var(--card); border-radius: 16px; padding: 16px; }
+    .muted { color: var(--muted); }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; background: color-mix(in srgb, var(--card) 70%, var(--border)); border: 1px solid var(--border); border-radius: 6px; padding: 2px 6px; font-size: .85em; }
+
+    footer { padding: 24px; color: var(--muted); text-align: center; border-top: 1px solid var(--border); }
+  </style>
 </head>
-
 <body>
   <header>
-    <div class="container header-flex">
+    <div class="container" style="display:flex; gap:18px; align-items:center;">
       <a href="#home" class="brand" data-tab-link>
+        <!-- swap profile.jpg with your own image file -->
         <img class="logo-img" src="assets/ashley_2.JPG" alt="Portrait of Ashley Gao" />
         <div>
           <div class="title">Ashley (Ye) Gao</div>
@@ -22,12 +71,9 @@
       </a>
       <div class="spacer"></div>
       <div class="toolbar">
-        <button id="themeToggle" class="toggle" aria-label="Toggle theme" title="Toggle light/dark">
-          Toggle theme
-        </button>
+        <button id="themeToggle" class="toggle" aria-label="Toggle theme" title="Toggle light/dark">Toggle theme</button>
       </div>
     </div>
-
     <div class="container nav" role="tablist" aria-label="Primary">
       <button class="tab" role="tab" aria-selected="true" data-tab="home">Home</button>
       <button class="tab" role="tab" aria-selected="false" data-tab="lab">Lab</button>
@@ -39,38 +85,112 @@
 
   <main class="container">
     <!-- Home -->
-    <section id="home" role="tabpanel" class="active">
+    <section id="home" role="tabpanel" class="active" aria-labelledby="home-tab">
       <div class="grid">
         <div class="card">
           <h1>Welcome</h1>
-          <p>
-            My name is <strong>Ashley Y. Gao</strong>, and I am an <strong>Assistant Professor</strong>
-            at <strong>William &amp; Mary</strong>. I obtained my <strong>PhD</strong> in Computer Science
-            from the <strong>University of Virginia (UVa)</strong>, advised by Professor
-            <strong>John Stankovic</strong>.
-          </p>
-          <p>
-            Before joining Professor Stankovic's group, I obtained my <strong>M.S.</strong> in Computer
-            Science at the University of Virginia, and my <strong>B.S.</strong> in Computer Science and
-            <strong>B.A.</strong> in Literatures of the World at UC San Diego.
-          </p>
+          <p>My name is <strong>Ashley Y. Gao</strong>, and I am an <strong>Assistant Professor</strong> at <strong>William &amp; Mary</strong>. I obtained my <strong>PhD</strong> in Computer Science from the <strong>University of Virginia (UVa)</strong>, advised by Professor <strong>John Stankovic</strong>. My research interest lies in the intersection of <em>Large Audio Language Models (Audio LLMs)</em>, <em>Affective Computing</em>, <em>Natural Language Processing</em>, and their application in <em>smart healthcare</em>.</p>
+          <p>Before joining Professor Stankovic's group, I obtained my <strong>M.S.</strong> in Computer Science at the University of Virginia, and my <strong>B.S.</strong> in Computer Science and <strong>B.A.</strong> in Literatures of the World at the University of California, San Diego (UCSD).</p>
         </div>
-
         <aside class="card">
           <h2>Information</h2>
-          <p>Department of Computer Science<br />William &amp; Mary</p>
-          <p>
-            Office: Integrated Science Center 4, Room 2381<br />
-            Williamsburg, VA 23185
-          </p>
+          <p>Department of Computer Science<br/>William &amp; Mary</p>
+          <p>Office: Integrated Science Center 4, Room 2381 <br/>Williamsburg, VA 23185, United States</p>
           <p>e-mail: <span class="kbd">ygao18_at_wm_edu</span></p>
           <p>CV: <a href="assets/CV_Ashley_Gao.pdf" target="_blank" rel="noopener">here</a></p>
         </aside>
       </div>
+
+      <div class="card">
+        <h2>Research Assistant Recruitment</h2>
+        <p class="muted">I am actively looking for graduate and undergraduate students from the following disciplinary backgrounds: computer science, data science, artificial intelligence, information science, health sciences.</p>
+        <p>If you are interested in working with me, please email me following the instructions below. In your email, include:</p>
+        <ul>
+          <li>Your resume/CV.</li>
+          <li>Your transcript(s) and class ranking.</li>
+          <li>Your current degree program, and a brief overview of any relevant coursework or research experience.</li>
+          <li>A concise and pithy summary of why you are interested in working with me; please refer to my publications for relevant prior work. Note: if you are a Master's or undergraduate student, I may direct you to complete an independent study before considering a funded position.</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Other sections unchanged -->
-    <!-- Lab / Publications / Teaching / Awards -->
+    <!-- Lab -->
+    <section id="lab" role="tabpanel" aria-labelledby="lab-tab">
+      <h1>Lab</h1>
+      <p class="muted">The Galatea Lab @ William & Mary.</p>
+      <div class="grid">
+        
+        <div class="card">
+         <h2>Graduate Student</h2>
+         <ul>
+           <li><strong>Jiacheng Shi</strong> — Affective computing in Audio LLMs.</li>
+           <li><strong>Hongfei Du</strong> — Affective computing in NLP and LLMs.</li>
+         </ul>
+       </div>
+        <div class="card">
+          <h2>Open Positions</h2>
+          <p>Prospective students and collaborators are encouraged to read the <a href="#home" data-tab-link>Research Assistant Recruitment</a> notes and email as directed.</p>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Projects</h2>
+        <ul>
+          <li><strong>Domain-Generalized Audio Sensing</strong> — robust SER under distribution shift.</li>
+          <li><strong>Sentiment Steering in LLMs</strong> — learning to interpret and control/steer the emotional tone of generated output by LLMs.</li>
+          <li><strong>Audio Stress Detection for ADRD Caregivers</strong> — lightweight models linked to an mobile app to reduce ADRD caregiver stress.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" role="tabpanel" aria-labelledby="publications-tab">
+      <h1>Publications</h1>
+      <p class="muted">List publications in reverse chronological order. Include links to PDFs, code, and datasets when available.</p>
+      <p class="muted">For my publications earlier than 2025, please see my Google Scholar page <a href="https://scholar.google.com/citations?user=XvbRi5wAAAAJ&hl=en">Here</a>.</p>
+      <div class="card">
+        <h2>Selected</h2>
+        <ul>
+          <li>[2026] Plug-and-Play Emotion Graphs for Compositional Prompting in Zero-Shot Speech Emotion Recognition. - Shi, J., Du, H., Hong, Y. A., Gao, Y. — <em>2026 IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)</em>. <a href="#" aria-label="PDF link">PDF</a> · <a href="#" aria-label="Code link">Code</a></li>
+          <li>[2026] EMO-TTA: Improving Test-Time Adaptation of Audio-Language Models for Speech Emotion Recognition. - Shi, J., Du, H., Hong, Y. A., Gao, Y. — <em>2026 IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)</em>. <a href="#" aria-label="PDF link">PDF</a> · <a href="#" aria-label="Code link">Code</a></li>
+          <li>[2026] Emotion-Aligned Generation in Diffusion Text to Speech Models via Preference-Guided Optimization. - Shi, J., Du, H., He, Y., Hong, Y. A., Gao, Y. — <em>2026 IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)</em>. <a href="#" aria-label="PDF link">PDF</a> · <a href="#" aria-label="Code link">Code</a></li>
+        </ul>
+        <ul>
+          <li>[2025] Role-Guided Annotation and Prototype-Aligned Representation Learning for Historical Literature Sentiment Classification. - Du, H., Shi, J., Myerston, J., Lu, S., Zhou, G., Gao, Y. — <em>The 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP)</em>. <a href="#" aria-label="PDF link">PDF</a> · <a href="#" aria-label="Code link">Code</a></li>
+          <li>[2025] EAA: Emotion-Aware Audio Large Language Models with Dual Cross-Attention and Context-Aware Instruction Tuning - Du, H., Lu, S., Zhou, G., Gao, Y. — <em>Interspeech 2025</em>. <a href="#">PDF</a> · <a href="#">Code</a></li>
+          <li>[2025] CLEP-DG: Contrastive Learning for Speech Emotion Domain Generalization via Soft Prompt Tuning — Shi, J., Zhang, Y., Gao, Y. - <em>Interspeech 2025</em>. <a href="#">PDF</a> · <a href="#">Code</a></li>
+          <li>[2025] ElectroMeter: The Practical Electrolyte Measurement System. - Clapham, J., Zhou, M., MacDonald, C., Koltermann, K., Gao, Y., Shao, H. — <em>Connected Health: Applications, Systems and Engineering Technologies (CHASE 2025)</em>. <a href="#">PDF</a> · <a href="#">Code</a></li>
+          <li>[2025] Challenges to recruiting dementia caregiving dyads in community-based settings: Lessons learned from an in-home technology-based intervention. - Ko, E., Gao, Y., Wang, P., Wijayasingha, L., Wright, K. D., Gordon, K. C., Wang, H., Stankovic, J. A., Rose, K. M. — <em>JMIR Formative Research</em>. <a href="#">PDF</a> · <a href="#">Code</a></li>
+          <li>[2025] MiddleGAN: Generating Inter-domain Images with GANs - Macdonald, C., Chu, Z., Stankovic, J., Zhou, G., Shao, H., Gao, Y. — <em>Transactions on Machine Learning Research (TMLR 2025)</em>. <a href="#">PDF</a> · <a href="#">Code</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Teaching -->
+    <section id="teaching" role="tabpanel" aria-labelledby="teaching-tab">
+      <h1>Teaching</h1>
+      <div class="card">
+        <h2>Courses</h2>
+        <ul>
+          <li>CSCI 416/516: Fundenmentals of ML/AI (Fall23, Fall24, <a href="https://lindagaw.github.io/courses/CSCI416-Spring26/CSCI416.html">Spring26</a>)</li>
+          <li>CSCI 680: Deep Transfer Leawrning (Spring24, Spring25, Fall25)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Awards -->
+    <section id="awards" role="tabpanel" aria-labelledby="awards-tab">
+      <h1>Awards & Honors</h1>
+      <div class="card">
+        <ul>
+          <li>[2024] Best Paper Award — Connected Health: Applications, Systems and Engineering Technologies (CHASE)</li>
+          <li>[2024] Best Service Award — Connected Health: Applications, Systems and Engineering Technologies (CHASE)</li>
+          <li>[2023] Best Paper Runner Up — International Conference on Smart Computing (Smartcomp)</li>
+          <li>[2019] UVA Computer Science PhD Fellowship - University of Virginia.</li>
+          <li>[2017] Dept of Comp Sci Academic Excellence Fellowship - University of Virginia.</li>
+          <li>[2016] Honors with High Distinction on B.A. in Literatures of the World - University of California, San Diego.</li>
+        </ul>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -78,16 +198,69 @@
   </footer>
 
   <script>
-    /* JS unchanged — omitted here for brevity */
+    // ------- Theme toggle (persisted) -------
+    (function(){
+      const lsKey = 'themePrefV1';
+      const saved = localStorage.getItem(lsKey);
+      const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+      if (saved === 'light' || (!saved && prefersLight)) document.documentElement.classList.add('light');
+      const btn = document.getElementById('themeToggle');
+      btn.addEventListener('click', () => {
+        const light = document.documentElement.classList.toggle('light');
+        localStorage.setItem(lsKey, light ? 'light' : 'dark');
+      });
+    })();
+
+    // ------- Tabs & hash routing -------
+    const tabs = Array.from(document.querySelectorAll('.tab'));
+    const panels = new Map(Array.from(document.querySelectorAll('section[role="tabpanel"]')).map(p => [p.id, p]));
+
+    function activate(id) {
+      if (!panels.has(id)) id = 'home';
+      for (const t of tabs) t.setAttribute('aria-selected', String(t.dataset.tab === id));
+      for (const [pid, el] of panels) el.classList.toggle('active', pid === id);
+      const activeBtn = tabs.find(t => t.dataset.tab === id);
+      if (activeBtn) activeBtn.focus({preventScroll:true});
+    }
+
+    tabs.forEach(t => t.addEventListener('click', () => {
+      const id = t.dataset.tab; history.replaceState(null, '', `#${id}`); activate(id);
+    }));
+
+    document.querySelectorAll('[data-tab-link]').forEach(a => a.addEventListener('click', (e) => {
+      e.preventDefault(); const href = (a.getAttribute('href')||'').replace('#','');
+      if (href) { history.replaceState(null, '', `#${href}`); activate(href); }
+    }));
+
+    window.addEventListener('hashchange', () => activate(location.hash.replace('#','')));
+    activate(location.hash.replace('#',''));
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
+  <!-- Structured data for SEO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Ashley (Ye) Gao",
     "jobTitle": "Assistant Professor of Computer Science",
-    "affiliation": { "@type": "CollegeOrUniversity", "name": "William & Mary" }
+    "affiliation": {"@type": "CollegeOrUniversity", "name": "William & Mary"},
+    "alumniOf": [
+      {"@type": "CollegeOrUniversity", "name": "University of Virginia"},
+      {"@type": "CollegeOrUniversity", "name": "University of California, San Diego"}
+    ],
+    "email": "ygao18@wm.edu",
+    "url": "",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "251 Jamestown Rd, McGlothlin-Street Hall 004",
+      "addressLocality": "Williamsburg",
+      "addressRegion": "VA",
+      "postalCode": "23185",
+      "addressCountry": "US"
+    }
   }
   </script>
 </body>
