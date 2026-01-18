@@ -1,0 +1,167 @@
+/* --------- Base & Theme --------- */
+:root {
+  --bg: #0b0c10;
+  --card: #111218;
+  --muted: #9aa3b2;
+  --text: #e8ecf1;
+  --brand: #2dd4bf;
+  --brand-2: #60a5fa;
+  --border: #1f2230;
+}
+
+:root.light {
+  --bg: #f7f7fb;
+  --card: #ffffff;
+  --muted: #505a6b;
+  --text: #1c1f28;
+  --brand: #0ea5e9;
+  --brand-2: #22c55e;
+  --border: #e5e7ef;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(96,165,250,0.12), transparent 60%),
+    radial-gradient(900px 500px at -10% 10%, rgba(45,212,191,0.12), transparent 60%),
+    var(--bg);
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* --------- Header --------- */
+header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: saturate(180%) blur(8px);
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  border-bottom: 1px solid var(--border);
+  z-index: 50;
+}
+
+.header-flex {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.logo-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.nav {
+  margin-top: 14px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--card) 80%, transparent),
+    var(--card)
+  );
+  color: var(--text);
+  border-radius: 999px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tab[aria-selected="true"] {
+  border-color: color-mix(in srgb, var(--brand) 60%, var(--border));
+}
+
+.spacer {
+  flex: 1;
+}
+
+.toggle {
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* --------- Layout --------- */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 760px) {
+  .grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.card {
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.kbd {
+  font-family: ui-monospace, monospace;
+  background: color-mix(in srgb, var(--card) 70%, var(--border));
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-size: 0.85em;
+}
+
+footer {
+  padding: 24px;
+  color: var(--muted);
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
