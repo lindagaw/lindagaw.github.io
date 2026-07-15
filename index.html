@@ -29,14 +29,18 @@
     </div>
   </nav>
 
-  <main class="wrap" id="top">
+  <div class="shell" id="top">
 
-    <!-- ========================================================= HERO -->
-    <header class="hero">
-     <div class="hero-grid">
-      <div class="hero-text">
+    <!-- ===================================================== SIDEBAR -->
+    <aside class="side">
+      <!-- Portrait. To swap: replace ashley.jpg. A vertical/portrait shot
+           works best; the frame crops square and centers on the face. -->
+      <div class="portrait">
+        <img src="assets//ashley.jpg" alt="Ashley (Ye) Gao" width="820" height="1093" />
+      </div>
+
       <p class="eyebrow">Assistant Professor &middot; Computer Science</p>
-      <h1 class="hero-name">Ashley <em>(Ye)</em> Gao</h1>
+      <h1 class="side-name">Ashley <em>(Ye)</em> Gao</h1>
 
       <!-- signature: a speech waveform that doubles as a written signature -->
       <svg class="sig" viewBox="0 0 340 26" role="img" aria-label="signature">
@@ -57,34 +61,27 @@
           S 330 8, 338 12" />
       </svg>
 
-      <p class="hero-role">
+      <p class="side-role">
         Computer Science, William &amp; Mary
-        <span class="sep">&middot;</span> Williamsburg, VA
+        <span class="sub">Williamsburg, Virginia</span>
       </p>
 
-      <p class="hero-lede">
-        I build machines that recognize and express emotion in voice &mdash;
-        audio&#8211;language models, controllable text&#8209;to&#8209;speech, and
-        robust learning for human&#8209;centered health.
+      <p class="side-lede">
+        Machines that hear, understand, and express emotion in voice.
       </p>
 
       <div class="links">
         <a class="link-chip" href="mailto:ygao18@wm.edu">Email</a>
-        <a class="link-chip" href="https://scholar.google.com/citations?user=XvbRi5wAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a class="link-chip" href="https://scholar.google.com/citations?user=XvbRi5wAAAAJ&amp;hl=en" target="_blank" rel="noopener">Scholar</a>
         <!-- Update this href to your hosted CV file if the name differs -->
         <a class="link-chip" href="assets//CV_Ashley_Gao.pdf">CV</a>
         <!-- Inferred from lindagaw.github.io — remove if not applicable -->
         <a class="link-chip" href="https://github.com/lindagaw" target="_blank" rel="noopener">GitHub</a>
       </div>
-      </div><!-- /.hero-text -->
+    </aside>
 
-      <!-- Portrait. To swap: replace ashley.jpg (a portrait/vertical crop
-           works best; the frame uses a 4:5 ratio and centers on the face). -->
-      <div class="portrait">
-        <img src="assets//ashley.jpg" alt="Ashley (Ye) Gao" width="820" height="1093" />
-      </div>
-     </div><!-- /.hero-grid -->
-    </header>
+    <!-- ===================================================== CONTENT -->
+    <main class="content">
 
     <!-- ===================================================== RESEARCH -->
     <section class="section reveal" id="research">
@@ -94,6 +91,11 @@
       </div>
 
       <div class="prose">
+        <p class="lead">
+          I build machines that recognize and express emotion in voice &mdash;
+          audio&#8211;language models, controllable text&#8209;to&#8209;speech, and
+          robust learning for human&#8209;centered health.
+        </p>
         <p>
           My research lies at the intersection of affective computing,
           audio-language modeling, and robust machine learning. I develop
@@ -489,11 +491,12 @@
       </ul>
     </section>
 
-  </main>
+    </main><!-- /.content -->
+  </div><!-- /.shell -->
 
   <!-- ======================================================== FOOTER -->
   <footer class="footer">
-    <div class="wrap footer-inner">
+    <div class="footer-inner">
       <p>&copy; <span id="year">2026</span> Ashley (Ye) Gao &middot; Williamsburg, VA</p>
       <div class="foot-links">
         <a href="mailto:ygao18@wm.edu">ygao18@wm.edu</a>
@@ -522,6 +525,25 @@
         });
       }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
       document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+    }
+
+    // Scroll-spy: highlight the section currently in view
+    const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
+    const byId = new Map(navLinks.map((a) => [a.getAttribute('href').slice(1), a]));
+    const targets = [...byId.keys()]
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+    if (targets.length) {
+      const spy = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            navLinks.forEach((a) => a.classList.remove('active'));
+            const link = byId.get(e.target.id);
+            if (link) link.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+      targets.forEach((t) => spy.observe(t));
     }
   </script>
 </body>
