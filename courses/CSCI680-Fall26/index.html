@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSCI 680 · Affective Computing · W&amp;M Fall 2026</title>
+<meta name="description" content="Graduate research seminar on affective computing: emotion recognition, audio-language models, expressive speech synthesis, robustness, and interpretability. William &amp; Mary, Fall 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-mark" href="index.html">CSCI 680 <span>· Affective Computing</span></a>
+    <a class="nav-link" href="index.html" aria-current="page">Overview</a>
+    <a class="nav-link" href="schedule.html">Schedule</a>
+    <a class="nav-link" href="assignments.html">Work</a>
+    <a class="nav-link" href="policies.html">Policies</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="wrap hero">
+    <p class="hero-eyebrow">
+      <span>William &amp; Mary</span>
+      <span>Fall 2026</span>
+      <span>Graduate seminar</span>
+      <b>3 credits</b>
+    </p>
+    <h1>Affective Computing</h1>
+    <p class="lede">Systems that recognize, model, generate, and respond to human emotion — read closely, argued over twice a week, and tested against what happens when they leave the lab.</p>
+
+    <dl class="facts">
+      <div class="fact">
+        <dt>Meetings</dt>
+        <dd>Tue &amp; Thu<br>11:00 a.m. – 12:20 p.m.</dd>
+      </div>
+      <div class="fact">
+        <dt>Room</dt>
+        <dd>John E. Boswell Hall 220</dd>
+      </div>
+      <div class="fact">
+        <dt>Format</dt>
+        <dd>Paper presentation<br>+ discussion</dd>
+      </div>
+      <div class="fact">
+        <dt>Instructor</dt>
+        <dd>Ashley (Ye) Gao<br><a href="mailto:ygao18@wm.edu">ygao18@wm.edu</a></dd>
+      </div>
+    </dl>
+
+    <div class="signal">
+      <div class="signal-head">
+        <h2>The semester, as a signal</h2>
+        <p class="note">Each frame is one meeting · height = papers assigned · gaps are weeks we don't meet</p>
+      </div>
+      <div class="track" id="track" role="list" aria-label="Semester schedule strip"></div>
+      <p class="readout" id="readout" aria-live="polite">Open <a href="schedule.html">the schedule</a> for all 26 meetings.</p>
+      <ul class="legend">
+        <li style="--c: var(--u1)"><i></i> I · Foundations</li>
+        <li style="--c: var(--u2)"><i></i> II · Speech representations</li>
+        <li style="--c: var(--u3)"><i></i> III · Audio-language models</li>
+        <li style="--c: var(--u4)"><i></i> IV · Emotional speech generation</li>
+        <li style="--c: var(--u5)"><i></i> V · Interpretability &amp; robustness</li>
+        <li style="--c: var(--u6)"><i></i> VI · Your projects</li>
+      </ul>
+      <p class="note" id="next-up" style="margin-top:22px">First meeting: Thursday, August 27.</p>
+    </div>
+  </section>
+
+  <section class="wrap band" id="about">
+    <p class="eyebrow">What this course is</p>
+    <div class="prose">
+      <p>Affective computing is the study of systems that recognize, model, generate, and respond to human emotion. This seminar covers the modern, machine-learning-centered version of that field: how emotion is represented in learned features, how it is recognized from speech and other signals under realistic conditions, how it is controlled in generative models, and how the resulting systems fail once they leave the lab.</p>
+      <p>We read one to two technical papers per meeting, drawn mostly from ICML, NeurIPS, ICLR, ACL/EMNLP, ICASSP, and Interspeech. The first third of the semester builds shared ground — emotion theory and its critiques, corpora and labels, self-supervised speech representations. The rest moves through four active research areas: <strong>emotion-aware audio-language models</strong>, <strong>expressive and controllable speech synthesis</strong>, <strong>robustness under distribution shift</strong>, and <strong>interpretability of affective representations</strong>. The last week belongs to your projects.</p>
+      <p>This is a discussion course, not a lecture course. Come having read the paper.</p>
+    </div>
+    <div class="btn-row">
+      <a class="btn btn-lead" href="schedule.html">Read the schedule</a>
+      <a class="btn" href="assignments.html">See what's graded</a>
+    </div>
+  </section>
+
+  <section class="wrap band" id="format">
+    <p class="eyebrow">How a meeting runs</p>
+    <div class="grid-3">
+      <div class="card">
+        <span class="card-num">35–40 min</span>
+        <h3>The presenter</h3>
+        <p>One student covers the problem, the method, the experiments, and the weaknesses — then facilitates the discussion that follows. You'll present once or twice over the semester; sign-ups happen on day one.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">~30 min</span>
+        <h3>The discussion</h3>
+        <p>Everyone else arrives having read the paper. The instructor presents in Weeks 1–2 to model the format and adds context throughout, but the seminar belongs to the students.</p>
+      </div>
+      <div class="card">
+        <span class="card-num">Due 9:00 a.m.</span>
+        <h3>The reading response</h3>
+        <p>250–400 words on every paper you aren't presenting: the central claim, one substantive critique, one question for the room. Credit/no-credit. Your two lowest scores are dropped, no questions asked.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap band" id="outcomes">
+    <p class="eyebrow">By December you should be able to</p>
+    <ol class="outcomes">
+      <li>Read a technical paper in affective computing critically — identify its claim, its evidence, its baselines, and the gap between what it demonstrates and what it asserts.</li>
+      <li>Explain the major families of methods for emotion recognition and emotion-controllable generation, and articulate the tradeoffs among them.</li>
+      <li>Present a research paper to a technical audience and lead a substantive discussion of it.</li>
+      <li>Situate a specific research contribution within the broader literature.</li>
+      <li>Design, execute, and report on an original research project, including a defensible experimental protocol.</li>
+      <li>Reason about the validity and ethical stakes of inferring emotional state from behavioral signals.</li>
+    </ol>
+  </section>
+
+  <section class="wrap band" id="prereqs">
+    <p class="eyebrow">Prerequisites</p>
+    <div class="grid-2">
+      <div>
+        <ul class="plain">
+          <li>Graduate standing in Computer Science, or permission of the instructor.</li>
+          <li>Working knowledge of machine learning at the level of CSCI 516 or equivalent — neural network training, optimization, evaluation.</li>
+          <li>Comfort with Python and at least one deep learning framework. PyTorch preferred.</li>
+          <li>Enough mathematical maturity to follow derivations involving probability, linear algebra, and basic information theory.</li>
+        </ul>
+      </div>
+      <div class="callout">
+        <h3>No speech background needed</h3>
+        <p>Prior work in speech or signal processing helps, but it isn't required. The audio concepts you need are introduced as they come up — the first time a mel spectrogram or a codec token matters, we stop and explain it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap band" id="instructor">
+    <p class="eyebrow">Who's teaching</p>
+    <div class="person">
+      <div class="person-initials" aria-hidden="true">AG</div>
+      <div>
+        <h3>Ashley (Ye) Gao</h3>
+        <p class="role">Assistant Professor of Computer Science</p>
+        <p class="note" style="margin-bottom:14px">Office hours: to be posted before the first day of class.</p>
+        <p class="person-links">
+          <a href="mailto:ygao18@wm.edu">ygao18@wm.edu</a>
+          <a href="https://lindagaw.github.io">lindagaw.github.io</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <span>CSCI 680 · Affective Computing · William &amp; Mary · Fall 2026</span>
+    <span>Syllabus subject to change. Changes are announced in class and posted here.</span>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

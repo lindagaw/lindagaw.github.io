@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schedule · CSCI 680 Affective Computing</title>
+<meta name="description" content="Meeting-by-meeting schedule and reading list for CSCI 680, Affective Computing, William &amp; Mary Fall 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-mark" href="index.html">CSCI 680 <span>· Affective Computing</span></a>
+    <a class="nav-link" href="index.html">Overview</a>
+    <a class="nav-link" href="schedule.html" aria-current="page">Schedule</a>
+    <a class="nav-link" href="assignments.html">Work</a>
+    <a class="nav-link" href="policies.html">Policies</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="wrap hero" style="padding-bottom:34px">
+    <p class="hero-eyebrow"><span>Six units</span><span>26 meetings</span><b>Aug 27 – Dec 3</b></p>
+    <h1>Schedule</h1>
+    <p class="lede">Classes begin August 26 and end December 4. Fall Break, Election Day, and Thanksgiving remove three of our meetings; November 24 is held online.</p>
+    <p class="note" style="max-width:64ch">The instructor reserves the right to adjust readings. The calendar dates are fixed.</p>
+  </section>
+
+  <section class="wrap band band-tight">
+
+    <!-- UNIT I -->
+    <div class="unit-head" style="--c: var(--u1)">
+      <span class="unit-tag">Unit I</span>
+      <h2>Foundations: what is being measured?</h2>
+      <p class="note">Emotion theory and its critics, then the corpora everything downstream is trained on.</p>
+    </div>
+
+    <article class="meet" id="m1" style="--c: var(--u1)">
+      <p class="meet-when"><span class="n">01</span><b>Thu Aug 27</b></p>
+      <div>
+        <h3>Course introduction</h3>
+        <p class="prose" style="margin-bottom:16px">Scope of the field, seminar mechanics, how to read and present a technical paper. Presentation sign-ups.</p>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">Affective Computing</span>
+            <span class="paper-meta">Picard · MIT Media Lab Perceptual Computing TR 321, 1995 · <span class="paper-how">skim</span></span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="meet" id="m2" style="--c: var(--u1)">
+      <p class="meet-when"><span class="n">02</span><b>Tue Sep 1</b></p>
+      <div>
+        <h3>Can emotion be inferred from behavior?</h3>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">Emotional Expressions Reconsidered: Challenges to Inferring Emotion From Human Facial Movements</span>
+            <span class="paper-meta">Barrett, Adolphs, Marsella, Martinez &amp; Pollak · Psychological Science in the Public Interest 20(1):1–68, 2019 · <span class="paper-how">read the executive summary and §1–2 closely, skim the rest</span></span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="meet" id="m3" style="--c: var(--u1)">
+      <p class="meet-when"><span class="n">03</span><b>Thu Sep 3</b></p>
+      <div>
+        <h3>Corpora I: acted and elicited emotion</h3>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">IEMOCAP: Interactive Emotional Dyadic Motion Capture Database</span>
+            <span class="paper-meta">Busso et al. · Language Resources and Evaluation 42(4):335–359, 2008</span>
+          </li>
+          <li>
+            <span class="paper-title">CREMA-D: Crowd-Sourced Emotional Multimodal Actors Dataset</span>
+            <span class="paper-meta">Cao et al. · IEEE Transactions on Affective Computing 5(4):377–390, 2014</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="meet" id="m4" style="--c: var(--u1)">
+      <p class="meet-when"><span class="n">04</span><b>Tue Sep 8</b></p>
+      <div>
+        <h3>Corpora II: naturalistic and in-the-wild data</h3>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">Building Naturalistic Emotionally Balanced Speech Corpus by Retrieving Emotional Speech From Existing Podcast Recordings</span>
+            <span class="paper-meta">Lotfian &amp; Busso · IEEE Transactions on Affective Computing 10(4):471–483, 2019</span>
+          </li>
+          <li>
+            <span class="paper-title">AffectNet: A Database for Facial Expression, Valence, and Arousal Computing in the Wild</span>
+            <span class="paper-meta">Mollahosseini, Hasani &amp; Mahoor · IEEE Transactions on Affective Computing 10(1):18–31, 2019</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- UNIT II -->
+    <div class="unit-head" style="--c: var(--u2)">
+      <span class="unit-tag">Unit II</span>
+      <h2>Learned speech representations</h2>
+      <p class="note">What self-supervised models learn from raw audio, and how much of it is affect.</p>
+    </div>
+
+    <article class="meet" id="m5" style="--c: var(--u2)">
+      <p class="meet-when"><span class="n">05</span><b>Thu Sep 10</b></p>
+      <div>
+        <h3>Self-supervised speech representation learning</h3>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">wav2vec 2.0: A Framework for Self-Supervised Learning of Speech Representations</span>
+            <span class="paper-meta">Baevski, Zhou, Mohamed &amp; Auli · NeurIPS 2020</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="meet" id="m6" style="--c: var(--u2)">
+      <p class="meet-when"><span class="n">06</span><b>Tue Sep 15</b></p>
+      <div>
+        <h3>Masked prediction and full-stack pretraining</h3>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">HuBERT: Self-Supervised Speech Representation Learning by Masked Prediction of Hidden Units</span>
+            <span class="paper-meta">Hsu et al. · IEEE/ACM TASLP 29:3451–3460, 2021</span>
+          </li>
+          <li>
+            <span class="paper-title">WavLM: Large-Scale Self-Supervised Pre-Training for Full Stack Speech Processing</span>
+            <span class="paper-meta">Chen et al. · IEEE JSTSP 2022</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="meet" id="m7" style="--c: var(--u2)">
+      <p class="meet-when"><span class="n">07</span><b>Thu Sep 17</b></p>
+      <div>
+        <h3>What do these representations actually encode?</h3>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">SUPERB: Speech Processing Universal PERformance Benchmark</span>
+            <span class="paper-meta">Yang et al. · Interspeech 2021</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <div class="due-row">
+      <span class="when">Fri Sep 18</span>
+      <span><a href="assignments.html#proposal">Project proposal due</a> — 2 pages.</span>
+    </div>
+
+    <article class="meet" id="m8" style="--c: var(--u2)">
+      <p class="meet-when"><span class="n">08</span><b>Tue Sep 22</b></p>
+      <div>
+        <h3>Prompting and parameter-efficient adaptation</h3>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">The Power of Scale for Parameter-Efficient Prompt Tuning</span>
+            <span class="paper-meta">Lester, Al-Rfou &amp; Constant · EMNLP 2021</span>
+          </li>
+          <li>
+            <span class="paper-title">Contrastive Learning for Speech Emotion Domain Generalization via Soft Prompt Tuning</span>
+            <span class="paper-meta">Shi, Zhang &amp; Gao · Interspeech 2025</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- UNIT III -->
+    <div class="unit-head" style="--c: var(--u3)">
+      <span class="unit-tag">Unit III</span>
+      <h2>Audio-language models and emotion</h2>
+      <p class="note">General hearing abilities bolted onto language models — and what it takes to make them hear affect.</p>
+    </div>
+
+    <article class="meet" id="m9" style="--c: var(--u3)">
+      <p class="meet-when"><span class="n">09</span><b>Thu Sep 24</b></p>
+      <div>
+        <h3>Audio-language models I</h3>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">Pengi: An Audio Language Model for Audio Tasks</span>
+            <span class="paper-meta">Deshmukh, Elizalde, Singh &amp; Wang · NeurIPS 2023</span>
+          </li>
+          <li>
+            <span class="paper-title">SALMONN: Towards Generic Hearing Abilities for Large Language Models</span>
+            <span class="paper-meta">Tang et al. · ICLR 2024</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="meet" id="m10" style="--c: var(--u3)">
+      <p class="meet-when"><span class="n">10</span><b>Tue Sep 29</b></p>
+      <div>
+        <h3>Audio-language models II</h3>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">Qwen-Audio: Advancing Universal Audio Understanding via Unified Large-Scale Audio-Language Models</span>
+            <span class="paper-meta">Chu et al. · arXiv:2311.07919, 2023</span>
+          </li>
+          <li>
+            <span class="paper-title">Listen, Think, and Understand</span>
+            <span class="paper-meta">Gong, Luo, Liu, Karlinsky &amp; Glass · ICLR 2024</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="meet" id="m11" style="--c: var(--u3)">
+      <p class="meet-when"><span class="n">11</span><b>Thu Oct 1</b></p>
+      <div>
+        <h3>Making audio LLMs emotion-aware</h3>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">Emotion-Aware Audio Large Language Models with Dual Cross-Attention and Context-Aware Instruction Tuning</span>
+            <span class="paper-meta">Du, Lu, Zhou &amp; Gao · Interspeech 2025</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="meet" id="m12" style="--c: var(--u3)">
+      <p class="meet-when"><span class="n">12</span><b>Tue Oct 6</b></p>
+      <div>
+        <h3>Structured prompting and low-resource affect</h3>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">Plug-and-Play Emotion Graphs for Compositional Prompting in Zero-Shot Speech Emotion Recognition</span>
+            <span class="paper-meta">Shi, Du, Hong &amp; Gao · IEEE ICASSP 2026</span>
+          </li>
+          <li>
+            <span class="paper-title">Role-Guided Annotation and Prototype-Aligned Representation Learning for Historical Literature Sentiment Classification</span>
+            <span class="paper-meta">Du, Shi, Myerston, Lu, Zhou &amp; Gao · Findings of EMNLP 2025</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <div class="break-row">
+      <span>Thu Oct 8</span>
+      <span>No class — Fall Break, October 8–11.</span>
+    </div>
+
+    <article class="meet" id="m13" style="--c: var(--u3)">
+      <p class="meet-when"><span class="n">13</span><b>Tue Oct 13</b></p>
+      <div>
+        <h3>Adapting at test time</h3>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">Tent: Fully Test-Time Adaptation by Entropy Minimization</span>
+            <span class="paper-meta">Wang, Shelhamer, Liu, Olshausen &amp; Darrell · ICLR 2021</span>
+          </li>
+          <li>
+            <span class="paper-title">EMO-TTA: Improving Test-Time Adaptation of Audio-Language Models for Speech Emotion Recognition</span>
+            <span class="paper-meta">Shi, Du, Hong &amp; Gao · IEEE ICASSP 2026</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- UNIT IV -->
+    <div class="unit-head" style="--c: var(--u4)">
+      <span class="unit-tag">Unit IV</span>
+      <h2>Generating emotional speech</h2>
+      <p class="note">Codecs, zero-shot synthesis, style control, and aligning generation with human preference.</p>
+    </div>
+
+    <article class="meet" id="m14" style="--c: var(--u4)">
+      <p class="meet-when"><span class="n">14</span><b>Thu Oct 15</b></p>
+      <div>
+        <h3>Neural audio codecs</h3>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">SoundStream: An End-to-End Neural Audio Codec</span>
+            <span class="paper-meta">Zeghidour, Luebs, Omran, Skoglund &amp; Tagliasacchi · IEEE/ACM TASLP 2021</span>
+          </li>
+          <li>
+            <span class="paper-title">High Fidelity Neural Audio Compression (EnCodec)</span>
+            <span class="paper-meta">Défossez, Copet, Synnaeve &amp; Adi · arXiv:2210.13438, 2022</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="meet" id="m15" style="--c: var(--u4)">
+      <p class="meet-when"><span class="n">15</span><b>Tue Oct 20</b></p>
+      <div>
+        <h3>Codecs that preserve affect</h3>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">AffectCodec: Emotion-Preserving Neural Speech Codec for Expressive Speech Modeling</span>
+            <span class="paper-meta">Shi, Du, Song, Hong, Zhang &amp; Gao · Findings of ACL 2026</span>
+          </li>
+          <li>
+            <span class="paper-title">AudioLM: A Language Modeling Approach to Audio Generation</span>
+            <span class="paper-meta">Borsos et al. · IEEE/ACM TASLP 2023</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="meet" id="m16" style="--c: var(--u4)">
+      <p class="meet-when"><span class="n">16</span><b>Thu Oct 22</b></p>
+      <div>
+        <h3>Zero-shot text-to-speech</h3>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">Neural Codec Language Models Are Zero-Shot Text to Speech Synthesizers (VALL-E)</span>
+            <span class="paper-meta">Wang et al. · arXiv:2301.02111, 2023</span>
+          </li>
+          <li>
+            <span class="paper-title">NaturalSpeech 2: Latent Diffusion Models Are Natural and Zero-Shot Speech and Singing Synthesizers</span>
+            <span class="paper-meta">Shen et al. · ICLR 2024</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="meet" id="m17" style="--c: var(--u4)">
+      <p class="meet-when"><span class="n">17</span><b>Tue Oct 27</b></p>
+      <div>
+        <h3>Style and expressivity</h3>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">StyleTTS 2: Towards Human-Level Text-to-Speech through Style Diffusion and Adversarial Training with Large Speech Language Models</span>
+            <span class="paper-meta">Li, Han, Raghavan, Mischler &amp; Mesgarani · NeurIPS 2023</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <div class="due-row" style="border-left-color: var(--muted)">
+      <span class="when" style="color: var(--muted)">Mon Oct 26</span>
+      <span style="color: var(--text-2)">Last day to withdraw.</span>
+    </div>
+
+    <article class="meet" id="m18" style="--c: var(--u4)">
+      <p class="meet-when"><span class="n">18</span><b>Thu Oct 29</b></p>
+      <div>
+        <h3>Aligning generative models with preferences</h3>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">Direct Preference Optimization: Your Language Model Is Secretly a Reward Model</span>
+            <span class="paper-meta">Rafailov, Sharma, Mitchell, Manning, Ermon &amp; Finn · NeurIPS 2023</span>
+          </li>
+          <li>
+            <span class="paper-title">Diffusion Model Alignment Using Direct Preference Optimization</span>
+            <span class="paper-meta">Wallace et al. · CVPR 2024</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <div class="due-row">
+      <span class="when">Fri Oct 30</span>
+      <span><a href="assignments.html#midterm">Midterm progress report due</a> — 4 pages.</span>
+    </div>
+
+    <div class="break-row">
+      <span>Tue Nov 3</span>
+      <span>No class — Election Day.</span>
+    </div>
+
+    <article class="meet" id="m19" style="--c: var(--u4)">
+      <p class="meet-when"><span class="n">19</span><b>Thu Nov 5</b></p>
+      <div>
+        <h3>Preference optimization for emotional TTS</h3>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">Emo-BPO: Emotion Bidirectional Preference Optimization for Diffusion-based Emotional TTS</span>
+            <span class="paper-meta">Shi, Du, Song, Hong, Zhang &amp; Gao · Interspeech 2026</span>
+          </li>
+          <li>
+            <span class="paper-title">Emotion-Aligned Generation in Diffusion Text-to-Speech Models via Preference-Guided Optimization</span>
+            <span class="paper-meta">Shi, Du, He, Hong &amp; Gao · IEEE ICASSP 2026</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- UNIT V -->
+    <div class="unit-head" style="--c: var(--u5)">
+      <span class="unit-tag">Unit V</span>
+      <h2>Interpretability and robustness</h2>
+      <p class="note">What the features mean, and what happens to them outside the training distribution.</p>
+    </div>
+
+    <article class="meet" id="m20" style="--c: var(--u5)">
+      <p class="meet-when"><span class="n">20</span><b>Tue Nov 10</b></p>
+      <div>
+        <h3>Opening the black box: interpretable emotion control</h3>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">Sparse Autoencoders Find Highly Interpretable Features in Language Models</span>
+            <span class="paper-meta">Huben, Cunningham, Smith, Ewart &amp; Sharkey · ICLR 2024</span>
+          </li>
+          <li>
+            <span class="paper-title">Sparse Autoencoders for Interpretable Emotion Control in Text-to-Speech</span>
+            <span class="paper-meta">Du, Shi, Lu, Zhou &amp; Gao · ICML 2026</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="meet" id="m21" style="--c: var(--u5)">
+      <p class="meet-when"><span class="n">21</span><b>Thu Nov 12</b></p>
+      <div>
+        <h3>Domain adaptation</h3>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">Domain-Adversarial Training of Neural Networks</span>
+            <span class="paper-meta">Ganin et al. · JMLR 17(59):1–35, 2016</span>
+          </li>
+          <li>
+            <span class="paper-title">Adversarial Discriminative Domain Adaptation</span>
+            <span class="paper-meta">Tzeng, Hoffman, Saenko &amp; Darrell · CVPR 2017</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="meet" id="m22" style="--c: var(--u5)">
+      <p class="meet-when"><span class="n">22</span><b>Tue Nov 17</b></p>
+      <div>
+        <h3>Distribution shift in deployed affect systems</h3>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">A Simple Unified Framework for Detecting Out-of-Distribution Samples and Adversarial Attacks</span>
+            <span class="paper-meta">Lee, Lee, Lee &amp; Shin · NeurIPS 2018</span>
+          </li>
+          <li>
+            <span class="paper-title">E-ADDA: Unsupervised Adversarial Domain Adaptation Enhanced by a New Mahalanobis Distance Loss</span>
+            <span class="paper-meta">Gao, Baucom, Gordon, Rose, Wang &amp; Stankovic · IEEE SmartComp 2023</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="meet" id="m23" style="--c: var(--u5)">
+      <p class="meet-when"><span class="n">23</span><b>Thu Nov 19</b></p>
+      <div>
+        <h3>Affect sensing in the wild: health deployments</h3>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">Emotion Recognition Robust to Indoor Environmental Distortions Using Out-of-Distribution Detection</span>
+            <span class="paper-meta">Gao, Salekin, Gordon, Rose, Wang &amp; Stankovic · ACM Transactions on Computing for Healthcare, 2021</span>
+          </li>
+          <li>
+            <span class="paper-title">Gait-Guard: Turn-aware Freezing of Gait Detection for Non-intrusive Intervention Systems</span>
+            <span class="paper-meta">Koltermann, Clapham, Blackwell, Jung, Burnet, Gao, Shao et al. · IEEE/ACM CHASE 2024</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="meet" id="m24" style="--c: var(--u5)">
+      <p class="meet-when"><span class="n">24</span><b>Tue Nov 24</b></p>
+      <div>
+        <h3>Beyond speech: multimodal and physiological affect <span class="meet-flag">Online</span></h3>
+        <p class="note" style="margin-bottom:14px">November 23–24 are university-designated remote instruction days. This meeting is held online.</p>
+        <ul class="papers">
+          <li>
+            <span class="paper-title">Multimodal Transformer for Unaligned Multimodal Language Sequences</span>
+            <span class="paper-meta">Tsai, Bai, Liang, Kolter, Morency &amp; Salakhutdinov · ACL 2019</span>
+          </li>
+          <li>
+            <span class="paper-title">Hierarchical Convolution Multibranch Transformer for EEG Signals</span>
+            <span class="paper-meta">Mersa, Jiang, Gao, Li &amp; Zhang · IEEE ICASSP 2026</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <div class="break-row">
+      <span>Thu Nov 26</span>
+      <span>No class — Thanksgiving Break, November 25–29.</span>
+    </div>
+
+    <!-- UNIT VI -->
+    <div class="unit-head" style="--c: var(--u6)">
+      <span class="unit-tag">Unit VI</span>
+      <h2>Project presentations</h2>
+      <p class="note">No assigned reading. The papers this week are yours.</p>
+    </div>
+
+    <article class="meet" id="m25" style="--c: var(--u6)">
+      <p class="meet-when"><span class="n">25</span><b>Tue Dec 1</b></p>
+      <div>
+        <h3>Final project presentations, session I</h3>
+      </div>
+    </article>
+
+    <article class="meet" id="m26" style="--c: var(--u6)">
+      <p class="meet-when"><span class="n">26</span><b>Thu Dec 3</b></p>
+      <div>
+        <h3>Final project presentations, session II</h3>
+      </div>
+    </article>
+
+    <div class="due-row">
+      <span class="when">Fri Dec 11</span>
+      <span><a href="assignments.html#final">Final report due</a> — 8 pages, conference format. No final exam.</span>
+    </div>
+
+    <p class="note" style="margin-top:26px">December 4 is the last day of classes. The university exam period runs December 7–11 and 14–15.</p>
+  </section>
+
+  <section class="wrap band" id="supplementary">
+    <p class="eyebrow">Supplementary reading</p>
+    <p class="prose" style="margin-bottom:24px">Optional. Useful for project work and for filling gaps in background.</p>
+    <ul class="papers" style="max-width:none">
+      <li>
+        <span class="paper-title">Tensor Fusion Network for Multimodal Sentiment Analysis</span>
+        <span class="paper-meta">Zadeh, Chen, Poria, Cambria &amp; Morency · EMNLP 2017, pp. 1103–1114</span>
+      </li>
+      <li>
+        <span class="paper-title">Multimodal Language Analysis in the Wild: CMU-MOSEI Dataset and Interpretable Dynamic Fusion Graph</span>
+        <span class="paper-meta">Bagher Zadeh, Liang, Poria, Cambria &amp; Morency · ACL 2018, pp. 2236–2246</span>
+      </li>
+      <li>
+        <span class="paper-title">Enhancing the Reliability of Out-of-Distribution Image Detection in Neural Networks (ODIN)</span>
+        <span class="paper-meta">Liang, Li &amp; Srikant · ICLR 2018</span>
+      </li>
+      <li>
+        <span class="paper-title">Audio Flamingo: A Novel Audio Language Model with Few-Shot Learning and Dialogue Abilities</span>
+        <span class="paper-meta">Kong, Goel, Badlani, Ping, Valle &amp; Catanzaro · ICML 2024</span>
+      </li>
+      <li>
+        <span class="paper-title">MiddleGAN: Generating Inter-domain Images with GANs</span>
+        <span class="paper-meta">Macdonald, Chu, Stankovic, Zhou, Shao &amp; Gao · Transactions on Machine Learning Research, 2024</span>
+      </li>
+      <li>
+        <span class="paper-title">Confidence-Aware Ranker Ensembles for Robust In-Context Knowledge Editing</span>
+        <span class="paper-meta">Nair, Nafee, Jiang, Gao, Chen &amp; Zhang · Findings of ACL 2026</span>
+      </li>
+      <li>
+        <span class="paper-title">ElectroMeter: The Practical Electrolyte Measurement System</span>
+        <span class="paper-meta">Clapham, Zhou, MacDonald, Koltermann, Gao &amp; Shao · IEEE/ACM CHASE 2025</span>
+      </li>
+      <li>
+        <span class="paper-title">Challenges to Recruiting Dementia Caregiving Dyads in Community-Based Settings</span>
+        <span class="paper-meta">Ko, Gao, Wang, Wijayasingha, Wright, Gordon, Wang, Stankovic &amp; Rose · JMIR Formative Research, 2025</span>
+      </li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <span>CSCI 680 · Affective Computing · William &amp; Mary · Fall 2026</span>
+    <span>Syllabus subject to change. Changes are announced in class and posted here.</span>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
