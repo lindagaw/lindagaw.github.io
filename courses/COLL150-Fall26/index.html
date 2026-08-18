@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COLL 150 · Artificial Intelligence in Speculative Media and Literatures</title>
+<meta name="description" content="A first-year W&amp;M seminar reading Ovid, Shelley, Marlowe, and Ishiguro alongside loss functions, mode collapse, and RLHF. Fall 2026, no background assumed.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-mark" href="index.html">COLL 150 <em>· Fall 2026</em></a>
+    <a class="nav-link" href="index.html" aria-current="page">Overview</a>
+    <a class="nav-link" href="schedule.html">Schedule</a>
+    <a class="nav-link" href="assignments.html">Writing</a>
+    <a class="nav-link" href="policies.html">Policies</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="wrap hero">
+    <p class="hero-tags">
+      <span>William &amp; Mary</span>
+      <span>Department of Computer Science</span>
+      <b>First-year seminar</b>
+      <i>No prerequisites</i>
+    </p>
+    <h1>Artificial Intelligence in Speculative Media and Literatures</h1>
+    <p class="lede">A Computer Science course that assigns Ovid, Marlowe, and Mary Shelley. A literature course that will ask you to read a loss function.</p>
+  </section>
+
+  <section class="wrap band band-open" id="glossary">
+    <div class="glossary">
+      <p class="eyebrow">The same six words, twice</p>
+      <p class="glossary-intro">We describe these systems, without quite meaning to, in a borrowed vocabulary. This course takes the coincidence seriously. Pick a word.</p>
+      <ul class="words" id="words"></ul>
+
+      <div class="registers">
+        <div class="register reg-machine">
+          <h4>In the machine</h4>
+          <div class="body" id="reg-machine-body"></div>
+        </div>
+        <div class="seam-line" aria-hidden="true"></div>
+        <div class="register reg-story">
+          <h4>In the story</h4>
+          <div class="body" id="reg-story-body"></div>
+        </div>
+      </div>
+      <p id="reg-source" style="margin-top:16px"></p>
+    </div>
+  </section>
+
+  <section class="wrap band" id="about">
+    <p class="eyebrow">The course</p>
+    <div class="prose">
+      <p>Long before anyone wrote a line of code, people were telling stories about made minds: an ivory statue that warms under a sculptor's hands, a creature assembled from corpses and abandoned by its maker, a teapot that opens its eyes after a hundred years of use. Today we build systems that we describe, without quite meaning it, in the same vocabulary — systems that learn, hallucinate, want, collapse, forget.</p>
+      <p>Over thirteen weeks we read speculative literature, film, and games alongside the actual technical machinery of modern machine learning, and we treat both as <strong>texts</strong> — artifacts made by people, encoding assumptions, arguments, and desires. A loss function is a mathematical object; it is also a sentence about what is worth minimizing. Mode collapse is a failure mode of a generative model; it is also a fable about what happens to a system rewarded for producing what pleases. We move back and forth between the two registers until the border between them starts to feel less obvious than it did in August.</p>
+    </div>
+
+    <div class="pull-wrap">
+      <p class="pull">The organizing question is not “can machines think?” It is harder and stranger than that: what do we want from a made mind, and what does the shape of that wanting tell us about ourselves?</p>
+    </div>
+
+    <div class="prose">
+      <p>Who counts as a maker, who counts as a creature, and who gets to decide? What does it cost to be the thing that answers?</p>
+    </div>
+  </section>
+
+  <section class="wrap band" id="belonging">
+    <p class="eyebrow">Before you read further</p>
+    <div class="cols-2">
+      <div class="card">
+        <h3>If you have never written a close reading</h3>
+        <p>You are a prospective CS major who has read a lot of code and no criticism. Good. The literary methods are taught here, in the room, starting with what a close reading actually is in Week 1.</p>
+      </div>
+      <div class="card">
+        <h3>If you have never seen a partial derivative</h3>
+        <p>You are a prospective English major who has never opened a machine learning paper. Also good. <strong>Everything technical will be taught from zero.</strong> No programming, mathematics, or literature background is assumed or required.</p>
+      </div>
+    </div>
+    <p class="note" style="margin-top:24px; max-width:70ch">Half of you will bluff about the math and half of you will bluff about the poetry, and both halves will be doing the same thing for the same reason. There is one wrong move in this course, and that is it.</p>
+  </section>
+
+  <section class="wrap band" id="logistics">
+    <p class="eyebrow">Logistics</p>
+    <dl class="facts">
+      <div>
+        <dt>Instructor</dt>
+        <dd>Ashley Y. Gao<br><a href="mailto:ygao18@wm.edu">ygao18@wm.edu</a></dd>
+      </div>
+      <div>
+        <dt>Office</dt>
+        <dd>Integrated Science Center 4<br>Office 2381</dd>
+      </div>
+      <div>
+        <dt>Meeting time</dt>
+        <dd class="tbd">TBD — posted before the first day</dd>
+      </div>
+      <div>
+        <dt>Classroom</dt>
+        <dd class="tbd">TBD</dd>
+      </div>
+      <div>
+        <dt>Office hours</dt>
+        <dd class="tbd">TBD, and by appointment</dd>
+      </div>
+      <div>
+        <dt>Credits</dt>
+        <dd>3</dd>
+      </div>
+      <div>
+        <dt>Prerequisites</dt>
+        <dd>None</dd>
+      </div>
+      <div>
+        <dt>To fulfill COLL 150</dt>
+        <dd>A grade of C− or better</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="wrap band" id="coll">
+    <p class="eyebrow">What COLL 150 is</p>
+    <div class="prose" style="margin-bottom:34px">
+      <p>COLL 150 is a first-year seminar in W&amp;M's College Curriculum. It is <strong>a writing course with a topic, not a topics course with some writing attached.</strong> Roughly a third of our time together goes explicitly to the craft of scholarly work: framing a question, finding and evaluating sources, structuring an argument, giving and receiving feedback, and revising — really revising, not just proofreading.</p>
+    </div>
+    <h4>By the end of the semester you will be able to</h4>
+    <ol class="outcomes">
+      <li>Analyze and interpret speculative texts and technical artifacts closely, attending to form, structure, rhetoric, and the assumptions each embeds. <span class="coll">Critical Thinking</span></li>
+      <li>Work independently to understand unfamiliar material — a nineteenth-century novel, a 2014 machine learning paper — and form and defend your own judgments about it. <span class="coll">Independent Inquiry</span></li>
+      <li>Write scholarly prose that communicates a complex, contestable argument in your own voice, supported by evidence and properly cited. <span class="coll">Scholarly Writing</span></li>
+      <li>Locate, evaluate, and cite scholarly and technical sources, including through Swem Library's research tools. <span class="coll">Information Literacy</span></li>
+      <li>Speak and listen as a member of a seminar: pose real questions, disagree productively, and present research to an audience. <span class="coll">Oral Communication</span></li>
+      <li>Explain the core mechanics of contemporary machine learning — objective functions, gradient descent, generative modeling, reinforcement learning — accurately, in plain English, to a non-specialist.</li>
+    </ol>
+  </section>
+
+  <section class="wrap band" id="materials">
+    <p class="eyebrow">Required materials</p>
+    <div class="prose" style="margin-bottom:34px">
+      <p>Acquire the editions listed where an edition is specified; page numbers in class refer to them. Everything not listed is posted to Blackboard as a PDF or a licensed streaming link.</p>
+      <p><strong>Cost is a real constraint.</strong> If any of this is a hardship, email me in the first week and we will solve it quietly and without fuss. Swem holds copies of everything, and I keep a small lending shelf.</p>
+    </div>
+
+    <div class="cols-2">
+      <div>
+        <h4>Books to buy</h4>
+        <ul class="stack">
+          <li><b>Metamorphoses</b> — Ovid<span class="by">trans. Stanley Lombardo (Hackett), or any complete verse translation you prefer</span></li>
+          <li><b>Frankenstein</b> — Mary Shelley<span class="by">1818 text, Norton Critical Edition, 2nd ed. We will discuss why the edition matters.</span></li>
+          <li><b>Doctor Faustus</b> — Christopher Marlowe<span class="by">A-text and B-text; Norton Critical or Revels Student Edition</span></li>
+          <li><b>The Madness of Knowledge</b> — Steven Connor<span class="by">On Wisdom, Ignorance and Fantasies of Knowing</span></li>
+          <li><b>Exhalation</b> — Ted Chiang<span class="by">Vintage — for “The Lifecycle of Software Objects”</span></li>
+          <li><b>Klara and the Sun</b> — Kazuo Ishiguro<span class="by">Vintage</span></li>
+          <li><b>Japandemonium Illustrated</b> — Toriyama Sekien<span class="by">The Yokai Encyclopedias, trans. Hiroko Yoda &amp; Matt Alt (Dover)</span></li>
+          <li><b>R.U.R.</b> — Karel Čapek<span class="by">Any translation; public-domain versions are free online</span></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Films</h4>
+        <ul class="stack">
+          <li><b>The Matrix</b><span class="by">Wachowskis, 1999</span></li>
+          <li><b>Ex Machina</b><span class="by">Garland, 2014</span></li>
+          <li><b>Her</b><span class="by">Jonze, 2013</span></li>
+          <li><b>Optional:</b> Ghost in the Shell (Oshii, 1995) · Blade Runner (Scott, 1982)</li>
+        </ul>
+
+        <h4 style="margin-top:34px">Games</h4>
+        <ul class="stack">
+          <li><b>Detroit: Become Human</b><span class="by">Quantic Dream, 2018</span></li>
+          <li><b>Mass Effect trilogy</b><span class="by">BioWare, 2007–2012</span></li>
+        </ul>
+        <p class="note" style="margin-top:16px">You are not required to buy or complete these. Games are long and expensive, and I will not pretend otherwise. Playing is a pleasure, not a prerequisite — every sequence we need to discuss is linked on the course site.</p>
+
+        <h4 style="margin-top:34px">Technical readings</h4>
+        <p class="note" style="margin-bottom:14px">All free and online; several are videos. Chosen for accessibility, not rigor-for-its-own-sake. Full links on Blackboard.</p>
+        <ul class="stack">
+          <li><b>Neural Networks, chs. 1–4</b><span class="by">3Blue1Brown · video</span></li>
+          <li><b>Reinforcement Learning: An Introduction, ch. 1</b><span class="by">Sutton &amp; Barto · free PDF</span></li>
+          <li><b>Generative Adversarial Networks</b><span class="by">Goodfellow et al., 2014 · abstract, Figure 1, and §3 only</span></li>
+          <li><b>Concrete Problems in AI Safety</b><span class="by">Amodei et al., 2016 · §§1–3</span></li>
+          <li><b>Specification Gaming: The Flip Side of AI Ingenuity</b><span class="by">Krakovna et al. · with the public list of examples</span></li>
+          <li><b>Computing Machinery and Intelligence</b><span class="by">Turing · Mind, 1950</span></li>
+          <li><b>On the Dangers of Stochastic Parrots</b><span class="by">Bender, Gebru, McMillan-Major &amp; Shmitchell, 2021</span></li>
+          <li><b>ChatGPT Is a Blurry JPEG of the Web</b><span class="by">Ted Chiang · The New Yorker, 2023</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="advisory" style="margin-top:44px">
+      <h3>Content advisory</h3>
+      <p>Our texts include depictions of violence, bodily horror, suicide, sexual coercion, abuse (including the abuse of children and of android characters coded as children), racialized dehumanization, and self-destruction. <em>Frankenstein</em>, <em>Doctor Faustus</em>, and <em>Detroit: Become Human</em> are each, in their way, difficult.</p>
+      <p>I will flag specific material in advance, and there are always alternate paths through an assignment. Come talk to me.</p>
+    </div>
+
+    <div class="btn-row">
+      <a class="btn" href="schedule.html">The thirteen units</a>
+      <a class="btn btn-spark" href="assignments.html">What you will write</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <span>COLL 150 · Artificial Intelligence in Speculative Media and Literatures · William &amp; Mary · Fall 2026</span>
+    <span>Syllabus subject to revision; changes announced in class and posted to Blackboard.</span>
+  </div>
+</footer>
+
+<script src="glossary.js"></script>
+</body>
+</html>
